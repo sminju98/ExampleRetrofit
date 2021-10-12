@@ -1,5 +1,6 @@
 package com.example.exampleretrofit.retrofit
 
+import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
@@ -27,7 +28,7 @@ interface WeatherApi {
 
     @GET(WEATHER_BY_ID)
     fun getCurrentWeather(
-        @Query("id") cityId: Int,
+        @Query("id") id: Int,
         @Query("appid") appId: String = APP_KEY
-    ) : call<WeatherResponse>
+    ) : Call<WeatherResponse>
 }
