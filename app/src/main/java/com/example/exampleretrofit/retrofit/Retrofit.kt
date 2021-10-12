@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-object Retrofit {
+object WeatherRetrofit {
 
     fun createWeatherApi(): WeatherApi {
         return Retrofit.Builder()
@@ -29,5 +29,5 @@ interface WeatherApi {
     fun getCurrentWeather(
         @Query("id") cityId: Int,
         @Query("appid") appId: String = APP_KEY
-    )
+    ) : call<WeatherResponse>
 }
